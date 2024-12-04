@@ -1,4 +1,5 @@
 <?php
+
 class UsuarioModelo
 {
     private $id;
@@ -17,7 +18,7 @@ class UsuarioModelo
             throw new \Exception('El campo no puede estar vacío');
         }
 
-        $validation = $this->validatePassword($passWord);
+        $validation = $this->ValidarPassword($password);
         if ($validation['estado'] === false) {
             throw new \Exception($validation['error']);
         }
@@ -92,7 +93,6 @@ class UsuarioModelo
     public function setFechaRegistro(String $fecha_registro): void
     {
         $this->fecha_registro = $fecha_registro;
-    }
-  
+    }  
 
 }

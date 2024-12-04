@@ -1,0 +1,49 @@
+<?php
+
+class ReporteModelo
+{
+    private $id;
+    private $titulo;
+    private $paginas;
+    private $costo;
+    private $fecha_reporte;
+    private $user_id;
+
+    public function __construct(String $id, String $titulo, String $paginas, String $costo, String $fecha_reporte ) {
+        if (empty($id) || empty($titulo) || empty($paginas) || empty($costo) || empty($fecha_reporte)) {
+            throw new \Exception('El campo no puede estar vacío');
+        }
+        $this->id = $id;
+        $this->titulo = $titulo;
+        $this->paginas = $paginas;
+        $this->costo = $costo;
+        $this->fecha_reporte = $fecha_reporte;
+    }
+
+    public function getId(): String
+    {
+        return $this->id;
+    }
+    public function getTitulo(): String
+    {
+        return $this->titulo;
+    }
+    public function getPaginas(): String
+    {
+        return $this->paginas;
+    }
+    public function getCosto(): String
+    {
+        return $this->costo;
+    }
+    public function getFechaReporte(): String
+    {
+        return $this->fecha_reporte;
+    }
+    public function getUser_id(): String
+    {
+        return $this->user_id;
+    }
+
+
+}
